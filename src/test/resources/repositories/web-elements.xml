@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pages xmlns="http://chameleon.ibs-qa.ru/schema/web-elements">
+    <Page name="QualIt">
+        <Page name="Главная страница">
+            <Block name="Меню"></Block>
+        </Page>
+
+        <Page name="Модальное окно добавления">
+            <TextInput name="Наименование" locator='//input [@id="name"]'/>
+            <ComboBox name="Тип" locator='//select [@id="type"]'/>
+            <CheckBox name="Экзотический" locator='//input [@id="exotic"]'/>
+            <Button name='Сохранить' locator='//button [@id="save"]'/>
+            <Button name="Овощ" locator='//option [@value="VEGETABLE"]'/>
+            <Button name="Фрукт" locator='//option [@value="FRUIT"]'/>
+        </Page>
+        <Page name="Меню">
+            <Link name="Товары" locator='//a [@href="/food"]'/>
+            <Link name="Сброс данных" locator='//a [@id="reset"]'/>
+            <Link name="Песочница" locator='//a [@id="navbarDropdown"]'/>
+        </Page>
+        <Page name="Список товаров">
+            <Block name="Меню"></Block>
+            <Button name="Добавить" isLoaded="true" locator="//button[@data-toggle='modal']"/>
+            <Collection name="Таблица" locator='.//table/tbody/tr'>
+                <StaticText name="#" locator=".//th"/>
+                <StaticText name="Наименование" locator=".//td[1]"/>
+                <StaticText name="Тип" locator=".//td[2]"/>
+                <StaticText name="Экзотический" locator=".//td[3]"/>
+            </Collection>
+        </Page>
+    </Page>
+</Pages>
